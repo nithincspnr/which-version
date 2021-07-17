@@ -1,6 +1,6 @@
 {
   "name": "which-version",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "To know which is the current version of your module or project.",
   "main": "index.js",
   "scripts": {
