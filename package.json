@@ -1,0 +1,29 @@
+{
+  "name": "which-version",
+  "version": "1.0.0",
+  "description": "To know which is the current version of your module or project.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "bin": {
+    "current-version": "./cli.js"
+  },
+  "keywords": [
+    "current",
+    "version",
+    "module",
+    "project",
+    "package"
+  ],
+  "homepage": "https://github.com/nithincspnr/which-version#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nithincspnr/which-version.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nithincspnr/which-version/issues"
+  },
+  "author": "Nithin cs <https://twitter.com/CSNithin>",
+  "license": "MIT"
+}
