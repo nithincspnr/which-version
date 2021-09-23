@@ -1,21 +1,23 @@
-const readFileSync = require("fs").readFileSync
 const resolve = require("path").resolve
 
-const parseJSON = file => JSON.parse(file)
-
-function readPackageJSON(dir = process.cwd()) {
-    const filePath = resolve(dir, "package.json")
-    return readFileSync(filePath, "utf-8")
-}
-
-function getVersion() {
-    const errMsg = "Sorry, failed to read the package version!"
+/** 
+ * Local module
+ */
+function readPkgJSON(dir = process.cwd()) {
     try {
-        const pkgJsonContent = readPackageJSON()
-        return parseJSON(pkgJsonContent).version || errMsg
-    } catch (error) {
-        return errMsg
+        return require(resolve(dir, "package.json"))
+    } catch (e) {
+        throw new Error('Sorry, No package.json file found!')
     }
 }
 
-module.exports = { getVersion }
+function getInfo() {
+    const { name, version } = readPkgJSON();
+    return { name, version }
+}
+
+function getVersion() {
+    return getInfo().version
+}
+
+module.exports = { getVersion, getInfo }

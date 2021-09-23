@@ -1,4 +1,6 @@
 #!/usr/bin/env node
-const getVersion = require('./index').getVersion;
+const { name, version } = require('./').getInfo();
 
-process.stdout.write(getVersion());
+const output = name ? `${name} :: ${version}` : `${version}`
+
+process.stdout.write(output);
