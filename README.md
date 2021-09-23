@@ -1,34 +1,31 @@
 # which-version
-To know which is the current version of your module or project.
+
+Get the current version of a module.
 
 ## Installation
 Use the package manager [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) to install it.
+
 ```
 npm install which-version
 ```
 
 ## Usage
-Use in your project as,
+Import the method and use,
 ```
 const getVersion = require("which-version").getVersion;
 getVersion();
-// => 1.0.0
+// => 1.1.0
 ```
-> **Note**: This is a synchronous method
+
+- To get the name as well as version, use `getInfo` method
+```
+const { name, version } = require("which-version").getInfo();
+```
 
 ## CLI
-If you are inside a module or project, you can use it as a command-line utility for finding out the version,
 
-### Install
-```
-npm install --g which-version
-```
-and run,
-```
-which-version
-// => 1.0.0
-```
-Otherwise use `npx` to run one the command if you don't want to install the package forever in your computer,
+If you are inside a module or project, simply find the version in command line using `npx`,
 ```
 npx which-version
+//=> module-name :: 1.1.0
 ```
